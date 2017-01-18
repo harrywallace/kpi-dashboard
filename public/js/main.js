@@ -2,7 +2,7 @@
  * Main AngularJS Web Application
  */
 var app = angular.module('dashboard', [
-  ngRoute
+  'ngRoute'
 ]);
 
 app.config(['$routeProvider', function ($routeProvider) {
