@@ -9,27 +9,6 @@
 <body ng-app="dashboard">
   <div ng-view></div>
 
-  <!-- Vendor: Firebase features -->
-  <script src="//www.gstatic.com/firebasejs/3.6.6/firebase-app.js"></script>
-  <script src="//www.gstatic.com/firebasejs/3.6.6/firebase-auth.js"></script>
-  <script src="//www.gstatic.com/firebasejs/3.6.6/firebase-database.js"></script>
-
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyCittNEnyew7n3TEB9RKKdCsHynlV6dO1M",
-      authDomain: "myfinance-kpi-dashboard.firebaseapp.com",
-      databaseURL: "https://myfinance-kpi-dashboard.firebaseio.com",
-      storageBucket: "myfinance-kpi-dashboard.appspot.com",
-      messagingSenderId: "510199120451"
-    };
-    firebase.initializeApp(config);
-  </script>
-
-  <!-- Vendor: Angular, followed by our custom Javascripts -->
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
-
   <!-- Our Website Javascripts -->
   <script src="assets/main.bundle.js"></script>
 </body>
