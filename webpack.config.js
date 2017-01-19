@@ -10,5 +10,16 @@ module.exports = {
     path: path.resolve(__dirname, './public/assets'),
     publicPath: '/assets',
     filename: '[name].bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /src\/js\/\.js$/,
+        use: [{
+          loader: 'babel-loader',
+          options: { presets: ['es2015'] }
+        }]
+      }
+    ]
   }
 };

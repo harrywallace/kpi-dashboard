@@ -1,12 +1,12 @@
 'use strict';
 
-var angular = require('angular');
-require('angular-route');
+import angular from 'angular';
+import 'angular-route';
 
-var firebase = require('firebase');
+import firebase from 'firebase';
 
 // Initialize Firebase
-var config = {
+const config = {
   apiKey: "AIzaSyCittNEnyew7n3TEB9RKKdCsHynlV6dO1M",
   authDomain: "myfinance-kpi-dashboard.firebaseapp.com",
   databaseURL: "https://myfinance-kpi-dashboard.firebaseio.com",
@@ -15,7 +15,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var app = angular.module('dashboard', [
+const app = angular.module('dashboard', [
   'ngRoute'
 ]);
 
