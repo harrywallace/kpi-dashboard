@@ -17,7 +17,8 @@
   },
   "scripts": {
     "bundle": "webpack --config webpack.config.js -p",
-    "serve": "firebase serve"
+    "serve": "firebase serve",
+    "deploy": "npm run bundle && firebase deploy"
   },
   "repository": {
     "type": "git",
