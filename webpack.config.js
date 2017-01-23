@@ -4,7 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   context: path.resolve(__dirname, './src/js'),
   entry: {
-    main: './main.js'
+    app: './app.js'
   },
   output: {
     path: path.resolve(__dirname, './public/assets'),
@@ -14,10 +14,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /src\/js\/\.js$/,
+        test: /\.js$/,
+        exclude:/node_modules/,
         use: [{
           loader: 'babel-loader',
-          options: { presets: ['es2015'] }
+          options: { presets: ['es2015', 'react'] }
         }]
       }
     ]

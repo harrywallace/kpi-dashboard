@@ -1,9 +1,9 @@
 'use strict';
 
-import angular from 'angular';
-import 'angular-route';
-
 import firebase from 'firebase';
+
+import React from "react";
+import ReactDOM from "react-dom";
 
 // Initialize Firebase
 const config = {
@@ -15,17 +15,12 @@ const config = {
 };
 firebase.initializeApp(config);
 
-const app = angular.module('dashboard', [
-  'ngRoute'
-]);
+class HelloMessage extends React.Component {
+  render() {
+    return <div>Hello {this.props.name}</div>;
+  }
+}
 
-app.config(['$routeProvider', function ($routeProvider) {
-  $routeProvider
-    // Home
-    .when("/", {templateUrl: 'partials/home.html', controller: 'DashboardController'})
-    .otherwise({redirectTo: '/'});
-}]);
+const mountNode = document.getElementById("root");
 
-app.controller('DashboardController', function (/* $scope, $location, $http */) {
-  console.log("Dashboard Controller reporting for duty.");
-});
+ReactDOM.render(<HelloMessage name="MyFinance" />, mountNode);
