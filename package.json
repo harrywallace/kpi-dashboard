@@ -16,7 +16,7 @@
     "webpack": "^2.2.0"
   },
   "scripts": {
-    "dev": "webpack -wp",
+    "dev": "webpack -wd",
     "bundle": "webpack -p",
     "serve": "firebase serve",
     "deploy": "npm run bundle && firebase deploy"
