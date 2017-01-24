@@ -42,19 +42,19 @@ class HeatMap extends React.Component {
   }
   componentWillMount() {
     this.firebaseRef = firebase.database().ref("map_states");
-    this.firebaseRef.on("child_added", function(dataSnapshot) {
+    this.firebaseRef.on("child_added", (dataSnapshot) => {
       this.items.push({key: dataSnapshot.key, value: dataSnapshot.val()});
       this.setState({
         items: this.items
       });
-    }.bind(this));
-    this.firebaseRef.on("child_changed", function(dataSnapshot) {
+    });
+    this.firebaseRef.on("child_changed", (dataSnapshot) => {
       var item = this.items.find(x => x.key == dataSnapshot.key);
       item.value = dataSnapshot.val();
       this.setState({
         items: this.items
       });
-    }.bind(this));
+    });
   }
 }
 
