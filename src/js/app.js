@@ -18,7 +18,7 @@ firebase.initializeApp(config);
 class MapState extends React.Component {
   render() {
     const {key, value} = this.props.mapState;
-    return <div>{key}: {value}</div>;
+    return <li>{key}: {value}</li>;
   }
 }
 
@@ -31,7 +31,12 @@ class HeatMap extends React.Component {
   render() {
     return (
       <div>
-        { this.state.items.map(ms => <MapState key={ms.key} mapState={ms} />) }
+        <h2>Traffic Heat Map</h2>
+        <ul>
+          {
+            this.state.items.map(ms => <MapState key={ms.key} mapState={ms} />)
+          }
+        </ul>
       </div>
     );
   }
