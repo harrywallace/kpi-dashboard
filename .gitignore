@@ -1,2 +1,4 @@
 .idea/*
 firebase-debug.log
+npm-debug.log
+public/assets/app.bundle.js

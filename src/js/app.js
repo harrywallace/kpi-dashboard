@@ -5,8 +5,6 @@ import ReactDOM from "react-dom";
 
 import firebase from 'firebase';
 
-import ReactFireMixin from 'reactfire'
-
 // Initialize Firebase
 const config = {
   apiKey: "AIzaSyCittNEnyew7n3TEB9RKKdCsHynlV6dO1M",
