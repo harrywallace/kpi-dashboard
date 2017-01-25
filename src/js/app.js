@@ -14,11 +14,9 @@ import config from './firebaseConfig';
 // Initialize Firebase
 firebase.initializeApp(config);
 
-class MapState extends React.Component {
-  render() {
-    const {key, value} = this.props.mapState;
-    return <li>{key}: {value}</li>;
-  }
+function MapState(props) {
+  const {key, value} = props.mapState;
+  return <li>{key}: {value}</li>;
 }
 
 class HeatMap extends React.Component {
@@ -29,16 +27,11 @@ class HeatMap extends React.Component {
   }
   render() {
     return (
-      <div className='container'>
-        <div className='page-header'>
-          <h2>Traffic Heat Map</h2>
-        </div>
-        <ul>
-          {
-            this.state.items.map(ms => <MapState key={ms.key} mapState={ms} />)
-          }
-        </ul>
-      </div>
+      <ul>
+        {
+          this.state.items.map(ms => <MapState key={ms.key} mapState={ms} />)
+        }
+      </ul>
     );
   }
   componentWillMount() {
@@ -59,6 +52,25 @@ class HeatMap extends React.Component {
   }
 }
 
+function StatCard(props) {
+  return (
+    <div className='col-sm-6'>
+      <div className='card'>
+        <div className='card-header'>
+          {props.header}
+        </div>
+        <div className='card-body'>
+          {props.body}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const mountNode = document.getElementById("root");
 
-ReactDOM.render(<HeatMap />, mountNode);
+const dashboard = (
+  <StatCard header='Traffic Heat Map' body={<HeatMap />}/>
+);
+
+ReactDOM.render(dashboard, mountNode);
