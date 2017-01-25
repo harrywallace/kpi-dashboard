@@ -30,8 +30,10 @@ class HeatMap extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h2>Traffic Heat Map</h2>
+      <div className='container'>
+        <div className='page-header'>
+          <h2>Traffic Heat Map</h2>
+        </div>
         <ul>
           {
             this.state.items.map(ms => <MapState key={ms.key} mapState={ms} />)
@@ -61,3 +63,5 @@ class HeatMap extends React.Component {
 const mountNode = document.getElementById("root");
 
 ReactDOM.render(<HeatMap />, mountNode);
+
+import 'bootstrap-loader';

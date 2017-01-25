@@ -20,7 +20,9 @@ module.exports = {
           loader: 'babel-loader',
           options: { presets: ['es2015', 'react'] }
         }]
-      }
+      },
+      { test: /\.(woff2?|svg)$/, loader: 'url-loader?limit=10000' },
+      { test: /\.(ttf|eot)$/, loader: 'file-loader' }
     ]
   }
 };
