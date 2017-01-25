@@ -21,6 +21,11 @@ module.exports = {
           options: { presets: ['es2015', 'react'] }
         }]
       },
+      {
+        test: /\.scss$/,
+        exclude:/node_modules/,
+        loaders: ["style-loader", "css-loader", "sass-loader"]
+      },
       { test: /\.(woff2?|svg)$/, loader: 'url-loader?limit=10000' },
       { test: /\.(ttf|eot)$/, loader: 'file-loader' }
     ]

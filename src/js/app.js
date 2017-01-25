@@ -1,5 +1,10 @@
 'use strict';
 
+// import Bootstrap
+import 'bootstrap-loader';
+// import app styles
+import '../stylesheets/main.scss';
+
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -57,5 +62,3 @@ class HeatMap extends React.Component {
 const mountNode = document.getElementById("root");
 
 ReactDOM.render(<HeatMap />, mountNode);
-
-import 'bootstrap-loader';
