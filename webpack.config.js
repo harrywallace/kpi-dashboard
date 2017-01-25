@@ -3,13 +3,14 @@ const webpack = require('webpack');
 
 module.exports = {
   context: path.resolve(__dirname, './src/js'),
-  entry: {
-    app: './app.js'
-  },
+  entry: [
+    './app.js',
+    'tether'
+  ],
   output: {
     path: path.resolve(__dirname, './public/assets'),
     publicPath: '/assets',
-    filename: '[name].bundle.js'
+    filename: 'app.bundle.js'
   },
   module: {
     rules: [
@@ -29,5 +30,10 @@ module.exports = {
       { test: /\.(woff2?|svg)$/, loader: 'url-loader?limit=10000' },
       { test: /\.(ttf|eot)$/, loader: 'file-loader' }
     ]
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      "window.Tether": "tether"
+    })
+  ]
 };
